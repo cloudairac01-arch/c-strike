@@ -198,13 +198,13 @@ export default function Home() {
               </span>
               <h3 className="font-display text-[33px] font-bold text-text-primary">시상</h3>
             </div>
-            <h4 className="mb-3 font-mono text-[14px] font-bold uppercase tracking-wide text-defend">대학 부문</h4>
+            <h4 className="mb-3 font-mono text-[16px] font-bold uppercase tracking-wide text-defend">대학 부문</h4>
             <Table>
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
-                  <TableHead className="text-[14px] py-4">구분</TableHead>
-                  <TableHead className="text-[14px] py-4">상 · 부상</TableHead>
-                  <TableHead className="text-right text-[14px] py-4 sm:text-left">수상 팀</TableHead>
+                  <TableHead className="text-[15.5px] py-4">구분</TableHead>
+                  <TableHead className="text-[15.5px] py-4">상 · 부상</TableHead>
+                  <TableHead className="text-right text-[15.5px] py-4 sm:text-left">수상 팀</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody className="reveal stagger-children">
@@ -215,20 +215,20 @@ export default function Home() {
                     </TableCell>
                     <TableCell className={`py-6 font-mono font-bold ${p.highlight ? "text-[27px] text-attack" : "text-[22px] text-text-primary"}`}>
                       {p.amount}
-                      <span className="mt-1 block font-sans text-[15px] font-medium text-text-secondary">{p.prize}</span>
+                      <span className="mt-1 block font-sans text-[15px] font-medium leading-5 text-text-secondary">{p.prize}</span>
                     </TableCell>
                     <TableCell className="py-6 text-right text-[17px] text-text-secondary sm:text-left">{p.winners}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
-            <h4 className="mb-3 mt-12 font-mono text-[14px] font-bold uppercase tracking-wide text-defend">일반 부문</h4>
+            <h4 className="mb-3 mt-12 font-mono text-[16px] font-bold uppercase tracking-wide text-defend">일반 부문</h4>
             <Table>
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
-                  <TableHead className="text-[14px] py-4">구분</TableHead>
-                  <TableHead className="text-[14px] py-4">상 · 부상</TableHead>
-                  <TableHead className="text-right text-[14px] py-4 sm:text-left">수상 팀</TableHead>
+                  <TableHead className="text-[15.5px] py-4">구분</TableHead>
+                  <TableHead className="text-[15.5px] py-4">상 · 부상</TableHead>
+                  <TableHead className="text-right text-[15.5px] py-4 sm:text-left">수상 팀</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody className="reveal stagger-children">
@@ -239,7 +239,7 @@ export default function Home() {
                     </TableCell>
                     <TableCell className={`py-6 font-mono font-bold ${p.highlight ? "text-[27px] text-attack" : "text-[22px] text-text-primary"}`}>
                       {p.amount}
-                      <span className="mt-1 block font-sans text-[15px] font-medium text-text-secondary">{p.prize}</span>
+                      <span className="mt-1 block font-sans text-[15px] font-medium leading-5 text-text-secondary">{p.prize}</span>
                     </TableCell>
                     <TableCell className="py-6 text-right text-[17px] text-text-secondary sm:text-left">{p.winners}</TableCell>
                   </TableRow>
@@ -268,7 +268,7 @@ export default function Home() {
                   i !== RESULTS_OVERVIEW.length - 1 ? "sm:border-r" : ""
                 } border-b sm:border-b-0`}
               >
-                <span className="font-mono text-[13.5px] font-bold uppercase tracking-wide text-defend">{item.label}</span>
+                <span className="font-mono text-[15px] font-bold uppercase tracking-wide text-defend">{item.label}</span>
                 <span className="text-[17.5px] font-medium leading-snug text-text-primary">{item.value}</span>
               </div>
             ))}
@@ -279,9 +279,9 @@ export default function Home() {
             <Table>
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
-                  <TableHead className="w-[84px] px-0">날짜</TableHead>
-                  <TableHead>시간</TableHead>
-                  <TableHead className="text-right sm:text-left">내용</TableHead>
+                  <TableHead className="w-[18%] text-center">날짜</TableHead>
+                  <TableHead className="w-[32%] text-center">시간</TableHead>
+                  <TableHead className="text-center">내용</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody className="reveal stagger-children">
@@ -290,18 +290,18 @@ export default function Home() {
                     key={`${row.time}-${i}`}
                     className={row.highlight ? "bg-gradient-to-r from-attack/10 to-transparent" : ""}
                   >
-                    <TableCell className={`px-0 font-mono font-bold ${row.highlight ? "text-[18.5px] text-attack" : "text-text-secondary"}`}>
+                    <TableCell className={`text-center font-mono font-bold ${row.highlight ? "text-[18.5px] text-attack" : "text-text-secondary"}`}>
                       {row.date}
                     </TableCell>
-                    <TableCell className={`font-mono ${row.highlight ? "font-bold text-attack" : "text-text-secondary"}`}>{row.time}</TableCell>
-                    <TableCell className={`text-right font-semibold sm:text-left ${row.highlight ? "text-attack" : "text-text-primary"}`}>
+                    <TableCell className={`text-center font-mono ${row.highlight ? "font-bold text-attack" : "text-text-secondary"}`}>{row.time}</TableCell>
+                    <TableCell className={`text-center font-semibold ${row.highlight ? "text-attack" : "text-text-primary"}`}>
                       {row.title}
                     </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
-            <p className="mt-[18px] border-t border-dashed border-border pt-4 text-[15px] text-text-muted">
+            <p className="border-t border-dashed border-border pt-4 text-[15px] text-text-muted">
               ※ 프로그램과 시간은 운영 상황에 따라 변경될 수 있습니다.
             </p>
           </div>
@@ -336,7 +336,7 @@ export default function Home() {
           <div className="hud reveal rounded-[3px] border border-border bg-bg-card p-6 sm:p-8">
             <div className="reveal stagger-children mb-7 flex flex-col divide-y divide-border">
               <div className="flex flex-col gap-2 py-5 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:gap-8">
-                <span className="w-full shrink-0 font-mono text-[14px] font-bold uppercase tracking-wide text-defend sm:w-[168px]">
+                <span className="w-full shrink-0 font-mono text-[16px] font-bold uppercase tracking-wide text-defend sm:w-[210px]">
                   접수 일정
                 </span>
                 <span className="flex flex-col gap-1 text-[17.5px] font-semibold leading-relaxed text-text-primary">
@@ -350,7 +350,7 @@ export default function Home() {
               </div>
               {JOIN_ITEMS.map((item) => (
                 <div key={item.label} className="flex flex-col gap-2 py-5 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:gap-8">
-                  <span className="w-full shrink-0 font-mono text-[14px] font-bold uppercase tracking-wide text-defend sm:w-[168px]">
+                  <span className="w-full shrink-0 font-mono text-[16px] font-bold uppercase tracking-wide text-defend sm:w-[210px]">
                     {item.label}
                   </span>
                   {item.pending ? (

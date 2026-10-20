@@ -12,7 +12,7 @@ export default function TitleIcon() {
         </clipPath>
         <linearGradient id="ti-grad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="var(--color-defend)" />
-          <stop offset="48%" stopColor="var(--color-defend-dark)" />
+          <stop offset="48%" stopColor="#05070c" />
           <stop offset="52%" stopColor="var(--color-attack-dark)" />
           <stop offset="100%" stopColor="var(--color-attack)" />
         </linearGradient>
