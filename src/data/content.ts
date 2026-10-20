@@ -8,7 +8,7 @@ export const EVENT = {
   eyebrow: "청주대 앵커사업단 · 충북과학기술혁신원 · 충청북도 공동 주최",
   desc: "충북 소재 대학생과 지역 거주자·재직자가 팀을 이뤄 실력을 겨루는 정보보호 해커톤",
   descLines: ["충북 소재 대학생과 지역 거주자·재직자가 팀을 이뤄 실력을 겨루는", "정보보호 해커톤"],
-  schedule: "2026.11.20(금) 14:00 – 11.21(토) 10:30 · 제이원호텔(오창)",
+  schedule: "2026.11.20(금) 16:30 – 11.21(토) 10:30 · 제이원호텔(오창)",
 };
 
 // 주최·주관·후원·운영 기관. logo는 public/logos/ 의 투명 배경 PNG 경로 — 파일이 없으면 기관명만 표시됩니다.
@@ -89,13 +89,12 @@ export const PRIZES_GENERAL = [
 ];
 
 export const RESULTS_OVERVIEW = [
-  { label: "일시", value: "2026.11.20(금) 14:00 – 11.21(토) 10:30" },
+  { label: "일시", value: "2026.11.20(금) 16:30 – 11.21(토) 10:30" },
   { label: "장소", value: "제이원호텔(오창) 제이드홀 2층" },
 ];
 
 export const SCHEDULE = [
-  { date: "11.20(금)", time: "14:00 – 16:30", title: "동아리 행사 · 전문가 특강", place: "제이드홀 2층", highlight: false },
-  { date: "", time: "16:30 – 17:30", title: "등록", place: "제이드홀 2층", highlight: false },
+  { date: "11.20(금)", time: "16:30 – 17:30", title: "등록", place: "제이드홀 2층", highlight: false },
   { date: "", time: "17:30 – 18:00", title: "오프닝", place: "제이드홀 2층", highlight: false },
   { date: "", time: "18:00 – 19:00", title: "저녁 식사", place: "별도 안내", highlight: false },
   { date: "", time: "19:00 – 19:20", title: "경진 대회 규칙 안내", place: "제이드홀 2층", highlight: false },
