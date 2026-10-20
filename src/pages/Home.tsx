@@ -122,7 +122,7 @@ export default function Home() {
       </header>
 
       {/* ---------- ABOUT ---------- */}
-      <section id="about" className="scroll-mt-[68px] border-b border-border py-16 sm:py-20">
+      <section id="about" className="scroll-mt-[68px] border-b border-border bg-bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>대회 소개</Eyebrow>
           <SectionTitle>해커톤이 만드는 것</SectionTitle>
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* ---------- RESULTS ---------- */}
-      <section id="results" className="scroll-mt-[68px] border-b border-border bg-bg-surface py-16 sm:py-20">
+      <section id="results" className="scroll-mt-[68px] border-b border-border py-16 sm:py-20">
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>대회 개요</Eyebrow>
           <SectionTitle>일정과 프로그램</SectionTitle>
@@ -330,7 +330,7 @@ export default function Home() {
       </section>
 
       {/* ---------- JOIN ---------- */}
-      <section id="join" className="scroll-mt-[68px] border-b border-border py-16 sm:py-20">
+      <section id="join" className="scroll-mt-[68px] border-b border-border bg-bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>참가 안내</Eyebrow>
           <SectionTitle>참가 신청 전 확인할 것</SectionTitle>
@@ -384,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* ---------- RULES ---------- */}
-      <section id="rules" className="scroll-mt-[68px] border-b border-border bg-bg-surface py-16 sm:py-20">
+      <section id="rules" className="scroll-mt-[68px] border-b border-border py-16 sm:py-20">
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>대회 규정</Eyebrow>
           <SectionTitle>대회 규정사항</SectionTitle>

@@ -5,7 +5,6 @@
 @import "@fontsource/jetbrains-mono/600.css";
 @import "@fontsource/jetbrains-mono/700.css";
 @import "@fontsource/jetbrains-mono/800.css";
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap");
 
 @theme {
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
@@ -81,8 +80,8 @@ body {
   font-family: var(--font-sans);
   word-break: keep-all;
   background-image:
-    linear-gradient(to right, rgba(34, 211, 238, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(34, 211, 238, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
   background-size: 56px 56px;
   background-attachment: fixed;
 }

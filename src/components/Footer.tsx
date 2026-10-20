@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="mt-10 border-t border-border py-12">
+    <footer className="border-t border-border py-12">
       <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
         {/* 상단: 브랜드 + 메뉴 */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-8">
