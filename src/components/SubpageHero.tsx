@@ -5,11 +5,13 @@ export default function SubpageHero({
   eyebrow,
   title,
   desc,
+  descClassName = "max-w-[560px]",
   children,
 }: {
   eyebrow?: string;
   title: string;
   desc?: string;
+  descClassName?: string;
   children?: ReactNode;
 }) {
   return (
@@ -28,7 +30,7 @@ export default function SubpageHero({
           </div>
         )}
         <h1 className="section-title font-display mb-5 text-[clamp(28px,3.4vw,40px)] font-bold text-text-primary">{title}</h1>
-        {desc && <p className="max-w-[560px] text-[18.5px] text-text-secondary">{desc}</p>}
+        {desc && <p className={`text-[18.5px] text-text-secondary ${descClassName}`}>{desc}</p>}
         {children}
       </div>
     </header>

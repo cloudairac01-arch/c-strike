@@ -36,7 +36,16 @@ export default function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-0 z-[100] border-b border-border bg-bg-base/90 backdrop-blur-md">
       <div className="mx-auto flex h-[68px] max-w-[1180px] items-center justify-between px-6 sm:px-8">
-        <Link to="/" className="font-display flex items-center gap-2.5 text-[20px] font-bold">
+        <Link
+          to="/"
+          onClick={(e) => {
+            if (location.pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="font-display flex items-center gap-2.5 text-[20px] font-bold"
+        >
           <Logo className="h-[26px] w-[26px] shrink-0" />
           {EVENT.name}
         </Link>

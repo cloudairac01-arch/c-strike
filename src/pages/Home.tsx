@@ -4,9 +4,7 @@ import {
   AMENITIES,
   DEADLINES,
   EVENT,
-  EVENT_RULES,
   PRIZES_GENERAL,
-  RULES_PENALTY,
   INQUIRY_FORM_URL,
   ORGS,
   JOIN_ITEMS,
@@ -18,6 +16,7 @@ import {
 } from "../data/content";
 import { Card, SectionSub, SectionTitle, Eyebrow } from "../components/ui";
 import { Badge } from "@/components/ui/badge";
+import { RULEBOOK } from "../data/rules";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -362,35 +361,23 @@ export default function Home() {
           <Eyebrow>대회 규정</Eyebrow>
           <SectionTitle>대회 규정</SectionTitle>
           <p className="reveal mb-12 text-[19.5px] leading-relaxed text-text-secondary">
-            본 대회의 모든 참가자는 아래 운영 규정을 준수하여야 하며, 참가 신청과 동시에 본 규정에 동의한 것으로 간주합니다.
+            참가 신청과 동시에 대회 규정에 동의한 것으로 간주합니다. 참가 자격, 경기 방식, AI 도구 활용, 부정행위와 제재 등 전체 조항은 규정집에서 확인해 주세요.
           </p>
 
-          <div className="hud reveal rounded-[3px] border border-border bg-bg-card px-6 py-2 sm:px-8">
-            <div className="reveal stagger-children flex flex-col divide-y divide-border">
-              {EVENT_RULES.map((r) => (
-                <div key={r.title} className="flex flex-col gap-3 py-7">
-                  <span className="text-[19px] font-bold text-text-primary">{r.title}</span>
-                  <ol className="flex flex-col gap-2">
-                    {r.items.map((it, n) => (
-                      <li key={it} className="flex gap-2.5 text-[16.5px] leading-relaxed text-text-secondary">
-                        <span className="shrink-0 font-mono font-bold text-defend">{n + 1}.</span>
-                        {it}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              ))}
-              <div className="flex flex-col gap-3 py-7">
-                <span className="text-[19px] font-bold text-attack">{RULES_PENALTY.title}</span>
-                <ol className="flex flex-col gap-2">
-                  {RULES_PENALTY.items.map((it, n) => (
-                    <li key={it} className="flex gap-2.5 text-[16.5px] leading-relaxed text-text-primary">
-                      <span className="shrink-0 font-mono font-bold text-attack">{n + 1}.</span>
-                      {it}
-                    </li>
-                  ))}
-                </ol>
+          <div className="hud reveal rounded-[3px] border border-border bg-bg-card p-7 sm:p-9">
+            <div className="flex flex-wrap items-center justify-between gap-5">
+              <div>
+                <h3 className="mb-2 text-[20.5px] font-bold text-text-primary">{RULEBOOK.title}</h3>
+                <p className="max-w-[640px] text-[16.5px] text-text-secondary">
+                  총 {RULEBOOK.chapters.length}장 {RULEBOOK.chapters.reduce((n, c) => n + c.articles.length, 0)}조 · 시행 {RULEBOOK.effective}
+                </p>
               </div>
+              <Button asChild size="lg" className="group">
+                <Link to="/rules">
+                  대회 규정집 보러가기
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
