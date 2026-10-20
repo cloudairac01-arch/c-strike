@@ -6,16 +6,15 @@ import {
   EVENT,
   EVENT_RULES,
   PRIZES_GENERAL,
-  RULES_DISCLAIMER,
+  RULES_PENALTY,
   INQUIRY_FORM_URL,
-  HOSTS,
+  ORGS,
   JOIN_ITEMS,
   PRIZES,
   PURPOSES,
   RESULTS_OVERVIEW,
   RULES,
   SCHEDULE,
-  TARGETS,
 } from "../data/content";
 import { Card, SectionSub, SectionTitle, Eyebrow } from "../components/ui";
 import { Badge } from "@/components/ui/badge";
@@ -31,18 +30,12 @@ import IconTalent from "../components/icons/IconTalent";
 import IconBuilding from "../components/icons/IconBuilding";
 import IconSwords from "../components/icons/IconSwords";
 import IconNetwork from "../components/icons/IconNetwork";
-import IconTeam from "../components/icons/IconTeam";
-import IconWeb from "../components/icons/IconWeb";
-import IconLock from "../components/icons/IconLock";
-import IconEtc from "../components/icons/IconEtc";
 import IconPrize from "../components/icons/IconPrize";
-import IconPodium from "../components/icons/IconPodium";
 import IconChat from "../components/icons/IconChat";
 import IconCoffee from "../components/icons/IconCoffee";
 
-const RULE_ICONS = [IconSwords, IconNetwork, IconTeam, IconPodium, IconChat];
+const RULE_ICONS = [IconSwords, IconNetwork, IconChat];
 const PURPOSE_ICONS = [IconTarget, IconTalent, IconBuilding];
-const TARGET_ICONS = [IconWeb, IconLock, IconEtc];
 
 export default function Home() {
   const { hash } = useLocation();
@@ -73,17 +66,6 @@ export default function Home() {
         <HeroVisual />
         <div className="relative mx-auto grid max-w-[1180px] grid-cols-1 gap-14 px-6 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
           <div className="hero-stagger">
-            <p className="mb-5 flex flex-wrap items-center gap-x-2.5 gap-y-2 font-mono text-[15px] font-semibold uppercase tracking-[0.16em] text-defend">
-              {HOSTS.map((h, i) => (
-                <span key={h.name} className="inline-flex items-center gap-2">
-                  {i > 0 && <span className="mr-0.5 text-text-muted">·</span>}
-                  {h.logo && <img src={h.logo} alt="" className="h-[26px] w-auto" />}
-                  {h.name}
-                </span>
-              ))}
-              <span>공동 주최</span>
-            </p>
-
             <div className="mb-6 flex items-center gap-4 sm:gap-5">
               <TitleIcon />
               <h1 className="font-display text-[clamp(30px,4.6vw,58px)] font-bold leading-[1.05] text-text-primary">
@@ -109,6 +91,22 @@ export default function Home() {
                 </Link>
               </Button>
               <span className="font-mono text-[15.5px] text-text-secondary">{EVENT.schedule}</span>
+            </div>
+
+            <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6">
+              {ORGS.map((g) => (
+                <div key={g.role} className="grid grid-cols-[52px_1fr] items-start gap-x-3">
+                  <span className="pt-[3px] font-mono text-[14px] font-bold tracking-[0.1em] text-defend">{g.role}</span>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    {g.items.map((o) => (
+                      <span key={`${g.role}-${o.name}`} className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-text-primary">
+                        {o.logo && <img src={o.logo} alt="" className="h-[24px] w-auto" />}
+                        {o.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
 
           </div>
@@ -171,27 +169,7 @@ export default function Home() {
             })}
           </div>
 
-          <h3 className="reveal mb-5 text-[20.5px] font-bold text-text-primary">공략해야 할 취약점</h3>
-          <div className="grid grid-cols-1 gap-10">
-            <div className="reveal stagger-children flex flex-col gap-3">
-              {TARGETS.map((t, i) => {
-                const Icon = TARGET_ICONS[i];
-                return (
-                  <div key={`${t.tag}-${i}`} className="flex flex-1 items-center gap-3.5 rounded-[3px] border border-border bg-bg-card px-5 py-4">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-attack/30 bg-attack/10 text-attack">
-                      <Icon className="h-[18px] w-[18px]" />
-                    </span>
-                    <div className="flex flex-1 flex-wrap items-baseline gap-x-3 gap-y-0.5">
-                      <span className="font-mono text-[14px] font-bold text-attack">{t.tag}</span>
-                      <p className="text-[16px] leading-relaxed text-text-primary">{t.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="hud hud-attack reveal mt-16 rounded-[3px] border border-attack/25 bg-bg-card p-9 sm:p-14">
+          <div className="hud hud-attack reveal rounded-[3px] border border-attack/25 bg-bg-card p-9 sm:p-14">
             <div className="mb-9 flex items-center gap-4">
               <span className="flex h-16 w-16 shrink-0 items-center justify-center">
                 <IconPrize className="h-16 w-16" />
@@ -260,18 +238,17 @@ export default function Home() {
           <SectionTitle>일정과 프로그램</SectionTitle>
           <SectionSub>{EVENT.desc}입니다.</SectionSub>
 
-          <div className="reveal stagger-children mb-12 grid grid-cols-1 overflow-hidden rounded-[3px] border border-border sm:grid-cols-2 lg:grid-cols-4">
-            {RESULTS_OVERVIEW.map((item, i) => (
-              <div
-                key={item.label}
-                className={`flex flex-col gap-2 border-border bg-bg-card p-5 ${
-                  i !== RESULTS_OVERVIEW.length - 1 ? "sm:border-r" : ""
-                } border-b sm:border-b-0`}
-              >
-                <span className="font-mono text-[15px] font-bold uppercase tracking-wide text-defend">{item.label}</span>
-                <span className="text-[17.5px] font-medium leading-snug text-text-primary">{item.value}</span>
-              </div>
-            ))}
+          <div className="hud reveal mb-12 rounded-[3px] border border-border bg-bg-card p-6 sm:p-8">
+            <div className="reveal stagger-children flex flex-col divide-y divide-border">
+              {RESULTS_OVERVIEW.map((item) => (
+                <div key={item.label} className="flex flex-col gap-2 py-5 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:gap-8">
+                  <span className="w-full shrink-0 font-mono text-[16px] font-bold uppercase tracking-wide text-defend sm:w-[210px]">
+                    {item.label}
+                  </span>
+                  <span className="text-[17.5px] font-semibold leading-relaxed text-text-primary">{item.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <h3 className="reveal mb-5 text-[20.5px] font-bold text-text-primary">일정</h3>
@@ -383,31 +360,38 @@ export default function Home() {
       <section id="rules" className="scroll-mt-[68px] border-b border-border py-16 sm:py-20">
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>대회 규정</Eyebrow>
-          <SectionTitle>대회 규정사항</SectionTitle>
-          <SectionSub>
-            모든 참가자는 아래 규정을 준수해야 합니다.
-            <br />
-            위반 시 감점, 득점 취소 또는 참가 자격 박탈 등의 조치가 있을 수 있습니다.
-          </SectionSub>
+          <SectionTitle>대회 규정</SectionTitle>
+          <p className="reveal mb-12 text-[19.5px] leading-relaxed text-text-secondary">
+            본 대회의 모든 참가자는 아래 운영 규정을 준수하여야 하며, 참가 신청과 동시에 본 규정에 동의한 것으로 간주합니다.
+          </p>
 
-          <div className="reveal stagger-children grid grid-cols-1 gap-3.5 md:grid-cols-2">
-            {EVENT_RULES.map((r) => (
-              <div key={r.title} className="hud flex flex-col gap-3 rounded-[3px] border border-border bg-bg-card px-6 py-6">
-                <span className="text-[19px] font-bold text-text-primary">{r.title}</span>
-                <ul className="flex flex-col gap-2">
-                  {r.items.map((it) => (
-                    <li key={it} className="flex gap-2 text-[16.5px] leading-relaxed text-text-secondary">
-                      <span className="font-bold text-attack">›</span>
+          <div className="hud reveal rounded-[3px] border border-border bg-bg-card px-6 py-2 sm:px-8">
+            <div className="reveal stagger-children flex flex-col divide-y divide-border">
+              {EVENT_RULES.map((r) => (
+                <div key={r.title} className="flex flex-col gap-3 py-7">
+                  <span className="text-[19px] font-bold text-text-primary">{r.title}</span>
+                  <ol className="flex flex-col gap-2">
+                    {r.items.map((it, n) => (
+                      <li key={it} className="flex gap-2.5 text-[16.5px] leading-relaxed text-text-secondary">
+                        <span className="shrink-0 font-mono font-bold text-defend">{n + 1}.</span>
+                        {it}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+              <div className="flex flex-col gap-3 py-7">
+                <span className="text-[19px] font-bold text-attack">{RULES_PENALTY.title}</span>
+                <ol className="flex flex-col gap-2">
+                  {RULES_PENALTY.items.map((it, n) => (
+                    <li key={it} className="flex gap-2.5 text-[16.5px] leading-relaxed text-text-primary">
+                      <span className="shrink-0 font-mono font-bold text-attack">{n + 1}.</span>
                       {it}
                     </li>
                   ))}
-                </ul>
+                </ol>
               </div>
-            ))}
-          </div>
-
-          <div className="hud hud-attack reveal mt-6 rounded-[3px] border border-attack/30 bg-bg-card px-6 py-5">
-            <p className="text-[18px] font-bold text-attack">{RULES_DISCLAIMER}</p>
+            </div>
           </div>
         </div>
       </section>

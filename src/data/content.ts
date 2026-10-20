@@ -11,11 +11,27 @@ export const EVENT = {
   schedule: "2026.11.20(금) 14:00 – 11.21(토) 10:30 · 제이원호텔(오창)",
 };
 
-// 공동 주최 기관 — 히어로 상단 한 줄. logo(투명 배경 PNG, public/logos/)가 있으면 기관명 앞에 표시됩니다.
-export const HOSTS: { name: string; logo?: string }[] = [
-  { name: "청주대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cju-anchor-mark.png` },
-  { name: "충북과학기술혁신원" },
-  { name: "충청북도" },
+// 주최·주관·후원·운영 기관. logo는 public/logos/ 의 투명 배경 PNG 경로 — 파일이 없으면 기관명만 표시됩니다.
+export const ORGS: { role: string; items: { name: string; logo?: string }[] }[] = [
+  {
+    role: "주최",
+    items: [
+      { name: "청주대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cju-anchor-mark.png` },
+      { name: "충북과학기술혁신원", logo: `${import.meta.env.BASE_URL}logos/cbist.png` },
+      { name: "충청북도", logo: `${import.meta.env.BASE_URL}logos/chungbuk.png` },
+    ],
+  },
+  {
+    role: "주관",
+    items: [
+      { name: "청주대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cju-anchor-mark.png` },
+      { name: "충북대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cbnu-mark.png` },
+      { name: "서원대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/seowon.png` },
+      { name: "충북정보보호지원센터", logo: `${import.meta.env.BASE_URL}logos/kisa-cb-mark.png` },
+    ],
+  },
+  { role: "후원", items: [{ name: "교육부", logo: `${import.meta.env.BASE_URL}logos/moe.png` }, { name: "충북앵커센터", logo: `${import.meta.env.BASE_URL}logos/cb-anchor-center.png` }] },
+  { role: "운영", items: [{ name: "클라우드에어 주식회사", logo: `${import.meta.env.BASE_URL}logos/cloudair-mark.png` }] },
 ];
 
 // 참가 신청 구글 폼 URL. 실제 폼이 만들어지면 이 값만 교체하면 사이트 전체에 반영됩니다.
@@ -43,8 +59,6 @@ export const PURPOSES = [
 export const RULES = [
   { term: "방식", value: "Attack & Defense" },
   { term: "네트워크", value: "OpenVPN 전용 내부망 · 참가자망/운영망 분리" },
-  { term: "팀 환경", value: "컨테이너 기반 · 원클릭 리셋" },
-  { term: "채점", value: "플래그 자동 생성 · 공격 로그 기반 부정행위 검증" },
   { term: "소통 채널", value: "Discord · 티켓 시스템 연동" },
 ];
 
@@ -70,15 +84,13 @@ export const PRIZES = [
 
 // 시상 내역 — 일반 부문
 export const PRIZES_GENERAL = [
-  { tier: "대상", amount: "충북과학기술혁신원장상 (확정 전)", prize: "상패", winners: "1팀", highlight: true },
-  { tier: "최우수상", amount: "충북과학기술혁신원장상 (확정 전)", prize: "상패", winners: "1팀", highlight: false },
+  { tier: "대상", amount: "충북과학기술혁신원장상", prize: "상패", winners: "1팀", highlight: true },
+  { tier: "최우수상", amount: "충북과학기술혁신원장상", prize: "상패", winners: "1팀", highlight: false },
 ];
 
 export const RESULTS_OVERVIEW = [
   { label: "일시", value: "2026.11.20(금) 14:00 – 11.21(토) 10:30" },
   { label: "장소", value: "제이원호텔(오창) 제이드홀 2층" },
-  { label: "주최", value: "청주대 앵커사업단 · 충북과학기술혁신원 · 충청북도" },
-  { label: "주관 · 후원", value: "청주대·충북대·서원대 앵커사업단, 충북정보보호지원센터 · 후원 교육부, 충북앵커센터 · 운영 클라우드에어" },
 ];
 
 export const SCHEDULE = [
@@ -109,38 +121,49 @@ export const DEADLINES = [
   { division: "일반부", close: "11.13(금)", notify: "11.17(화)" },
 ];
 
-// 대회 룰
+// 대회 규정 — 조·항 형식. 세부 내용 변경 시 여기만 수정.
 export const EVENT_RULES = [
   {
-    title: "AI 사용 규정",
+    title: "제1조 (AI 도구의 활용)",
     items: [
-      "웹 기반(채팅형) AI 서비스 사용만 허용합니다. 로컬 LLM 및 에이전트형 AI 사용은 금지합니다.",
-      "대회 중 무작위 인터뷰로 풀이 과정을 검증합니다. 풀이 과정을 설명하지 못하면 해당 문제는 감점 또는 득점 취소 처리됩니다.",
-      "문제를 휴대폰 등으로 촬영하여 AI에 입력하는 행위는 엄격히 금지합니다.",
+      "참가자는 웹 기반 대화형 AI 서비스를 활용할 수 있다.",
+      "로컬 LLM 및 에이전트형 AI(자동 풀이·자율 실행 도구)의 사용은 금지한다.",
+      "대회 문제를 촬영 또는 캡처하여 AI에 입력하는 행위는 금지한다.",
+      "운영진은 대회 중 무작위로 참가팀을 선정하여 풀이 과정에 대한 인터뷰를 실시하며, 풀이 과정을 설명하지 못하는 경우 해당 문제의 득점을 취소하거나 감점할 수 있다.",
     ],
   },
   {
-    title: "문제 관련 규정",
+    title: "제2조 (문제 및 풀이의 보안)",
     items: [
-      "대회 문제의 촬영·캡처·외부 공유를 금지합니다.",
-      "다른 팀과 문제를 의논하는 행위를 금지합니다.",
-      "풀이법을 다른 팀과 공유하는 행위를 금지합니다.",
+      "대회 문제의 촬영, 캡처, 복제 및 외부 유출을 금지한다.",
+      "타 팀과 문제를 논의하거나 풀이 방법을 공유하는 행위를 금지한다.",
     ],
   },
   {
-    title: "대회장 이탈",
+    title: "제3조 (대회장 이탈)",
     items: [
-      "대회장을 벗어날 때는 반드시 진행요원에게 고지해야 합니다.",
-      "대회 중 건물 밖 외출을 금지합니다. 흡연 및 편의점 이용은 허용합니다.",
+      "참가자가 대회장을 벗어나는 경우 반드시 진행요원에게 사전 고지하여야 한다.",
+      "대회 기간 중 건물 외부로의 외출은 금지한다. 다만 흡연 및 편의점 이용을 위한 일시적 외출은 허용한다.",
     ],
   },
   {
-    title: "반입 금지",
-    items: ["음주를 전면 금지하며 주류 반입을 금지합니다.", "흉기 등 위험 물품의 반입을 금지합니다."],
+    title: "제4조 (반입 금지 및 안전)",
+    items: [
+      "대회 기간 중 음주를 전면 금지하며, 주류의 반입을 금지한다.",
+      "흉기 등 위험 물품의 반입을 금지한다.",
+    ],
   },
 ];
 
-export const RULES_DISCLAIMER = "룰 위반에 대한 책임은 본인에게 있습니다.";
+// 제5조 — 위반 시 조치 (강조 박스)
+export const RULES_PENALTY = {
+  title: "제5조 (위반 시 조치)",
+  items: [
+    "본 규정을 위반한 경우 운영진의 판단에 따라 감점, 득점 취소 또는 참가 자격 박탈 조치를 할 수 있다.",
+    "부정행위는 시스템 로그 분석 및 풀이 검증을 통해 대회 종료 이후에도 적발될 수 있으며, 적발 시 수상이 취소될 수 있다.",
+    "규정 위반으로 발생하는 모든 책임은 참가자 본인에게 있다.",
+  ],
+};
 
 // 문의 게시판 예시 데이터 — 실제 접수 내용으로 교체하세요.
 export const BOARD_POSTS = [

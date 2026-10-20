@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { label: "대회 소개", href: "/#about" },
   { label: "대회 개요", href: "/#results" },
   { label: "참가 안내", href: "/#join" },
-  { label: "대회 규정사항", href: "/#rules" },
+  { label: "대회 규정", href: "/#rules" },
   { label: "문의하기", href: "/#contact" },
 ];
 
