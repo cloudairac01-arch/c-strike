@@ -99,11 +99,7 @@ export default function Home() {
               <span className="text-text-primary">{EVENT.sloganWords[2]}</span>
             </div>
 
-            <p className="mb-10 text-[20px] leading-relaxed text-text-secondary">
-              {EVENT.descLines[0]}
-              <br />
-              {EVENT.descLines[1]}
-            </p>
+            <p className="mb-10 text-[21px] font-semibold leading-relaxed text-text-primary">{EVENT.slogan}</p>
 
             <div className="flex flex-wrap items-center gap-5">
               <Button asChild size="lg">
@@ -262,7 +258,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>대회 개요</Eyebrow>
           <SectionTitle>일정과 프로그램</SectionTitle>
-          <div className="mb-12" />
+          <SectionSub>{EVENT.desc}입니다.</SectionSub>
 
           <div className="reveal stagger-children mb-12 grid grid-cols-1 overflow-hidden rounded-[3px] border border-border sm:grid-cols-2 lg:grid-cols-4">
             {RESULTS_OVERVIEW.map((item, i) => (
