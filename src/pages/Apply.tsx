@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const CHECKLIST = ["팀명", "부문 (대학부 / 일반부)", "팀장 이름 · 연락처 · 이메일", "팀원 이름 (팀장 포함 4인 이내)", "팀원별 소속 (학교 / 기관)", "팀원별 티셔츠 사이즈", "석식(중식당) 메뉴 선택"];
+const CHECKLIST = ["팀명", "부문 (대학부 / 일반부)", "팀장 이름 · 연락처 · 이메일", "팀원 이름 (팀장 포함 4인 이내)", "팀원별 소속 (학교 / 기관)", "팀원별 티셔츠 사이즈"];
 
 export default function Apply() {
   const formReady = GOOGLE_FORM_URL.length > 0;

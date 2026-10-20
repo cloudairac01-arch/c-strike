@@ -96,10 +96,10 @@ export const RESULTS_OVERVIEW = [
 export const SCHEDULE = [
   { date: "11.20(금)", time: "16:30 – 17:30", title: "등록", place: "제이드홀 2층", highlight: false },
   { date: "", time: "17:30 – 18:00", title: "오프닝", place: "제이드홀 2층", highlight: false },
-  { date: "", time: "18:00 – 19:00", title: "저녁 식사", place: "별도 안내", highlight: false },
+  { date: "", time: "18:00 – 19:00", title: "석식", place: "제이원호텔", highlight: false },
   { date: "", time: "19:00 – 19:20", title: "경진 대회 규칙 안내", place: "제이드홀 2층", highlight: false },
   { date: "", time: "19:20 – 09:20", title: "경진 대회 (14시간)", place: "제이드홀 2층", highlight: true },
-  { date: "11.21(토)", time: "09:20 – 10:00", title: "아침 식사", place: "별도 안내", highlight: false },
+  { date: "11.21(토)", time: "09:20 – 10:00", title: "조식", place: "제이원호텔", highlight: false },
   { date: "", time: "10:00 – 10:30", title: "시상식 및 마무리", place: "제이드홀 2층", highlight: false },
 ];
 
