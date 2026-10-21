@@ -5,28 +5,27 @@ export const EVENT = {
   sloganWords: ["SOLVE.", "COMPETE.", "SURVIVE."],
   slogan: "지역의 미래를 지키는 실전형 사이버 보안 도전",
   org: "2026 충북 정보보호 해커톤",
-  eyebrow: "청주대 앵커사업단 · 충북과학기술혁신원 · 충청북도 공동 주최",
+  eyebrow: "청주대 앵커사업단, 한국인터넷진흥원, 충청북도 공동 주최",
   desc: "충북 소재 대학생과 지역 거주자·재직자가 팀을 이뤄 실력을 겨루는 정보보호 해커톤",
   descLines: ["충북 소재 대학생과 지역 거주자·재직자가 팀을 이뤄 실력을 겨루는", "정보보호 해커톤"],
   schedule: "2026.11.20(금) 16:30 – 11.21(토) 10:30 · 제이원호텔(오창)",
 };
 
 // 주최·주관·후원·운영 기관. logo는 public/logos/ 의 투명 배경 PNG 경로 — 파일이 없으면 기관명만 표시됩니다.
-export const ORGS: { role: string; items: { name: string; logo?: string }[] }[] = [
+export const ORGS: { role: string; items: { name: string; logo?: string; logos?: string[]; tall?: boolean }[] }[] = [
   {
     role: "주최",
     items: [
       { name: "청주대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cju-anchor-mark.png` },
-      { name: "충북과학기술혁신원", logo: `${import.meta.env.BASE_URL}logos/cbist.png` },
+      { name: "한국인터넷진흥원", logo: `${import.meta.env.BASE_URL}logos/kisa.png`, tall: true },
       { name: "충청북도", logo: `${import.meta.env.BASE_URL}logos/chungbuk.png` },
     ],
   },
   {
     role: "주관",
     items: [
-      { name: "청주대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cju-anchor-mark.png` },
-      { name: "충북대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/cbnu-mark.png` },
-      { name: "서원대 앵커사업단", logo: `${import.meta.env.BASE_URL}logos/seowon.png` },
+      { name: "청주대 · 충북대 · 서원대 앵커사업단" },
+      { name: "충북과학기술혁신원", logo: `${import.meta.env.BASE_URL}logos/cbist.png` },
       { name: "충북정보보호지원센터", logo: `${import.meta.env.BASE_URL}logos/kisa-cb-mark.png` },
     ],
   },
@@ -41,7 +40,7 @@ export const GOOGLE_FORM_URL = "https://forms.gle/FHGsvbCSgmB5DXE96";
 export const INQUIRY_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf8qc05_IUbofLqs08fH6x1ZPmf6UorJpwYxjsWrn2UCoSj4Q/viewform";
 
 // 대회 타임라인 양 끝 — 등록·오프닝으로 시작해 시상식으로 끝납니다.
-// 그 사이 전체 구간(19:20 ~ 익일 09:20, 14시간)은 경진 대회 구간입니다.
+// 그 사이 전체 구간(19:00 ~ 익일 09:00, 규칙 안내 포함 14시간)은 경진 대회 구간입니다.
 export const MATCH_FLOW = {
   before: { title: "등록 & 오프닝" },
   after: { title: "시상식 & 마무리" },
@@ -97,9 +96,8 @@ export const SCHEDULE = [
   { date: "11.20(금)", time: "16:30 – 17:30", title: "등록", place: "제이드홀 2층", highlight: false },
   { date: "", time: "17:30 – 18:00", title: "오프닝", place: "제이드홀 2층", highlight: false },
   { date: "", time: "18:00 – 19:00", title: "석식", place: "제이원호텔", highlight: false },
-  { date: "", time: "19:00 – 19:20", title: "경진 대회 규칙 안내", place: "제이드홀 2층", highlight: false },
-  { date: "", time: "19:20 – 09:20", title: "경진 대회 (14시간)", place: "제이드홀 2층", highlight: true },
-  { date: "11.21(토)", time: "09:20 – 10:00", title: "조식", place: "제이원호텔", highlight: false },
+  { date: "", time: "19:00 – 09:00", title: "경진 대회 (14시간)", place: "제이드홀 2층", highlight: true },
+  { date: "11.21(토)", time: "09:00 – 10:00", title: "조식", place: "제이원호텔", highlight: false },
   { date: "", time: "10:00 – 10:30", title: "시상식 및 마무리", place: "제이드홀 2층", highlight: false },
 ];
 

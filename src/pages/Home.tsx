@@ -99,7 +99,10 @@ export default function Home() {
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                     {g.items.map((o) => (
                       <span key={`${g.role}-${o.name}`} className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-text-primary">
-                        {o.logo && <img src={o.logo} alt="" className="h-[24px] w-auto" />}
+                        {o.logo && <img src={o.logo} alt="" className={`${o.tall ? "h-[36px]" : "h-[24px]"} w-auto`} />}
+                        {o.logos?.map((l) => (
+                          <img key={l} src={l} alt="" className="h-[24px] w-auto" />
+                        ))}
                         {o.name}
                       </span>
                     ))}
@@ -142,7 +145,7 @@ export default function Home() {
 
           <h3 className="reveal mb-2 text-[22.5px] font-bold text-text-primary">어떻게 진행되나요?</h3>
           <p className="reveal mb-6 text-[16.5px] text-text-secondary">
-            16:30 등록과 오프닝, 석식 후 19:20부터 다음 날 09:20까지 14시간 동안 경진 대회가 진행됩니다.
+            16:30 등록과 오프닝, 석식 후 19:00부터 다음 날 09:00까지 14시간 동안 경진 대회가 진행됩니다.
           </p>
           <div className="mb-16">
             <MatchFlow />

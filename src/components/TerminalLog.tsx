@@ -1,8 +1,8 @@
 const LOG_LINES: { time: string; tag?: "EVENT" | "SOLVE" | "SYSTEM" | "SCORE"; text: string }[] = [
   { time: "16:30:00", tag: "EVENT", text: "등록 시작 — 제이드홀 2층" },
   { time: "17:30:00", tag: "EVENT", text: "오프닝" },
-  { time: "19:00:00", tag: "SYSTEM", text: "경진 대회 규칙 안내 — 해커톤 운영사" },
-  { time: "19:20:00", tag: "SYSTEM", text: "경진 대회 시작 (14h)" },
+  { time: "18:50:00", tag: "SYSTEM", text: "경진 대회 규칙 안내 — 해커톤 운영사" },
+  { time: "19:00:00", tag: "SYSTEM", text: "경진 대회 시작 (14h)" },
   { time: "19:42:11", tag: "SOLVE", text: "team_03 REGIONAL-01 FLAG_ACCEPTED" },
   { time: "23:40:51", tag: "SYSTEM", text: "야식 제공" },
   { time: "02:05:18", tag: "SOLVE", text: "team_01 Q-04 FLAG_ACCEPTED" },
