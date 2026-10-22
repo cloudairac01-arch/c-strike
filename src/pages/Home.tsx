@@ -391,17 +391,39 @@ export default function Home() {
         <div className="mx-auto max-w-[1180px] px-6 sm:px-8">
           <Eyebrow>문의하기</Eyebrow>
           <SectionTitle>문의하기</SectionTitle>
-          <SectionSub>참가 자격, 팀 구성, 대회 운영 관련 문의는 구글 폼을 작성해주세요.</SectionSub>
+          <SectionSub>참가 자격, 팀 구성, 대회 운영 관련 문의는 아래 연락처 또는 구글 폼으로 접수해주세요.</SectionSub>
 
-          <div className="hud reveal rounded-[3px] border border-border bg-bg-card p-7 sm:p-9">
-            <div className="flex flex-wrap items-center justify-between gap-5">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="hud reveal rounded-[3px] border border-border bg-bg-card p-7 sm:p-9">
+              <h3 className="mb-4 text-[20.5px] font-bold text-text-primary">접수 문의 연락처</h3>
+              <dl className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <dt className="w-[52px] shrink-0 font-mono text-[14px] font-bold tracking-[0.1em] text-defend">전화</dt>
+                  <dd>
+                    <a href="tel:01079979048" className="text-[17.5px] font-semibold text-text-primary transition-colors hover:text-defend">
+                      010-7997-9048
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex items-center gap-3">
+                  <dt className="w-[52px] shrink-0 font-mono text-[14px] font-bold tracking-[0.1em] text-defend">이메일</dt>
+                  <dd>
+                    <a href="mailto:support@cloud-air.kr" className="text-[17.5px] font-semibold text-text-primary transition-colors hover:text-defend">
+                      support@cloud-air.kr
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="hud reveal flex flex-col justify-between gap-5 rounded-[3px] border border-border bg-bg-card p-7 sm:p-9">
               <div>
                 <h3 className="mb-2 text-[20.5px] font-bold text-text-primary">문의 남기기</h3>
-                <p className="max-w-[640px] text-[16.5px] text-text-secondary">
+                <p className="text-[16.5px] text-text-secondary">
                   구글 폼에 문의 내용을 남겨주시면 운영진이 확인 후 답변드립니다.
                 </p>
               </div>
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="w-fit">
                 <a href={INQUIRY_FORM_URL} target="_blank" rel="noreferrer" className="group">
                   구글 폼으로 문의하기
                   <span className="transition-transform group-hover:translate-x-1">→</span>
