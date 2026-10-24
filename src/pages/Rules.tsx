@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SubpageHero from "../components/SubpageHero";
 import { RULEBOOK, type RuleBlock } from "../data/rules";
+import { smoothScrollToId } from "../lib/scrollTo";
 import { Button } from "@/components/ui/button";
 
 function Block({ block }: { block: RuleBlock }) {
@@ -84,7 +85,7 @@ export default function Rules() {
 
   const jump = (id: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    smoothScrollToId(id);
   };
 
   return (

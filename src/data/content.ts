@@ -109,6 +109,8 @@ export const AMENITIES = [
 
 export const JOIN_ITEMS = [
   { label: "참가 자격 · 팀 구성", value: "참가자가 직접 팀당 4인 이내로 팀을 구성해 팀 단위로 신청\n대학부: 충북 소재 대학 재학생 / 일반부: 충북 지역 기업·공공기관 재직자", pending: false },
+  { label: "참가비", value: "무료", pending: false },
+  { label: "기념품", value: "참가자 전원 기념티 지급", pending: false },
   { label: "접수 방법", value: "구글 폼 작성 (팀장 대표 신청)", pending: false },
 ];
 

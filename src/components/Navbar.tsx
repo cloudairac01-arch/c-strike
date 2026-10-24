@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { EVENT } from "../data/content";
+import { smoothScrollToId } from "../lib/scrollTo";
 import { Button } from "./ui/button";
 import Logo from "./Logo";
 
@@ -26,7 +27,7 @@ export default function Navbar() {
     const targetPath = path || "/";
     if (location.pathname === targetPath) {
       e.preventDefault();
-      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      smoothScrollToId(hash);
     } else {
       e.preventDefault();
       navigate(href);

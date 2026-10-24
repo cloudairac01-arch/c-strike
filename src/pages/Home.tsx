@@ -14,6 +14,7 @@ import {
   RULES,
   SCHEDULE,
 } from "../data/content";
+import { smoothScrollToId } from "../lib/scrollTo";
 import { Card, SectionSub, SectionTitle, Eyebrow } from "../components/ui";
 import { Badge } from "@/components/ui/badge";
 import { RULEBOOK } from "../data/rules";
@@ -42,9 +43,8 @@ export default function Home() {
   useEffect(() => {
     if (!hash) return;
     const id = hash.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
+    if (document.getElementById(id)) {
+      requestAnimationFrame(() => smoothScrollToId(id));
     }
   }, [hash]);
 

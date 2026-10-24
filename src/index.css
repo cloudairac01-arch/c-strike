@@ -317,11 +317,7 @@ body {
   animation: log-scroll 16s linear infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+/* 주의: prefers-reduced-motion(OS "애니메이션 효과 끄기") 차단 블록을 의도적으로 두지 않습니다.
+   이 블록이 있으면 해당 설정을 켠 PC에서 글리치·스크롤 리빌·로그 스크롤·노드 펄스가
+   전부 죽어 화면이 멈춘 것처럼 보입니다. 모든 PC에서 동일하게 보이는 쪽을 택했습니다.
+   (부드러운 스크롤은 브라우저가 같은 설정에서 무시하므로 src/lib/scrollTo.ts 에서 직접 구현) */
