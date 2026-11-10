@@ -183,7 +183,7 @@ export default function Home() {
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
                   <TableHead className="text-[15.5px] py-4">구분</TableHead>
-                  <TableHead className="text-[15.5px] py-4">상 · 부상</TableHead>
+                  <TableHead className="text-[15.5px] py-4">시상</TableHead>
                   <TableHead className="text-right text-[15.5px] py-4 sm:text-left">수상 팀</TableHead>
                 </TableRow>
               </TableHeader>
@@ -195,7 +195,6 @@ export default function Home() {
                     </TableCell>
                     <TableCell className={`py-6 font-mono font-bold ${p.highlight ? "text-[27px] text-attack" : "text-[22px] text-text-primary"}`}>
                       {p.amount}
-                      <span className="mt-1 block font-sans text-[15px] font-medium leading-5 text-text-secondary">{p.prize}</span>
                     </TableCell>
                     <TableCell className="py-6 text-right text-[17px] text-text-secondary sm:text-left">{p.winners}</TableCell>
                   </TableRow>
@@ -207,7 +206,7 @@ export default function Home() {
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
                   <TableHead className="text-[15.5px] py-4">구분</TableHead>
-                  <TableHead className="text-[15.5px] py-4">상 · 부상</TableHead>
+                  <TableHead className="text-[15.5px] py-4">시상</TableHead>
                   <TableHead className="text-right text-[15.5px] py-4 sm:text-left">수상 팀</TableHead>
                 </TableRow>
               </TableHeader>
@@ -219,7 +218,6 @@ export default function Home() {
                     </TableCell>
                     <TableCell className={`py-6 font-mono font-bold ${p.highlight ? "text-[27px] text-attack" : "text-[22px] text-text-primary"}`}>
                       {p.amount}
-                      <span className="mt-1 block font-sans text-[15px] font-medium leading-5 text-text-secondary">{p.prize}</span>
                     </TableCell>
                     <TableCell className="py-6 text-right text-[17px] text-text-secondary sm:text-left">{p.winners}</TableCell>
                   </TableRow>
@@ -227,7 +225,7 @@ export default function Home() {
               </TableBody>
             </Table>
             <p className="mt-6 border-t border-dashed border-border pt-4 text-[15px] text-text-muted">
-              ※ 시상 규모와 부상은 주최·후원 기관의 사정에 따라 변경될 수 있습니다.
+              ※ 시상 내역은 주최·후원 기관의 사정에 따라 변경될 수 있습니다.
             </p>
           </div>
         </div>

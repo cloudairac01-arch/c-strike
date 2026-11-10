@@ -75,16 +75,16 @@ export const TARGETS_NOTE = {
 
 // 시상 내역 — amount: 상 이름, prize: 상품(확정 후 교체)
 export const PRIZES = [
-  { tier: "대상", amount: "과학기술정보통신부 장관상", prize: "상장 · 30만원 상당 상품권", winners: "1팀", highlight: true },
-  { tier: "최우수상", amount: "충청북도 도지사상", prize: "상장 · 20만원 상당 상품권", winners: "1팀", highlight: false },
-  { tier: "최우수상", amount: "한국인터넷진흥원 원장상", prize: "상장 · 10만원 상당 상품권", winners: "1팀", highlight: false },
+  { tier: "대상", amount: "과학기술정보통신부 장관상", prize: "상장", winners: "1팀", highlight: true },
+  { tier: "최우수상", amount: "충청북도 지사상", prize: "상장", winners: "1팀", highlight: false },
+  { tier: "최우수상", amount: "한국인터넷진흥원 원장상", prize: "상장", winners: "1팀", highlight: false },
   { tier: "우수상", amount: "충북과학기술혁신원 원장상", prize: "상장", winners: "1팀", highlight: false },
 ];
 
 // 시상 내역 — 일반 부문
 export const PRIZES_GENERAL = [
-  { tier: "대상", amount: "충북과학기술혁신원장상", prize: "상패", winners: "1팀", highlight: true },
-  { tier: "최우수상", amount: "충북과학기술혁신원장상", prize: "상패", winners: "1팀", highlight: false },
+  { tier: "대상", amount: "충청북도 지사상", prize: "상장", winners: "1팀", highlight: true },
+  { tier: "최우수상", amount: "충북과학기술혁신원장상", prize: "상장", winners: "1팀", highlight: false },
 ];
 
 export const RESULTS_OVERVIEW = [
