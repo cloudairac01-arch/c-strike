@@ -40,7 +40,7 @@ export default function MatchFlow() {
         </div>
       </div>
       <p className="mt-2 text-center font-mono text-[14px] uppercase tracking-wide text-text-secondary">
-        경진 대회 경과 시간 (총 14시간)
+        경진 대회 경과 시간 (총 13시간 30분)
       </p>
 
       <p className="mx-auto mt-8 max-w-[520px] text-center text-[17px] leading-relaxed text-text-secondary">

@@ -8,7 +8,7 @@ export const EVENT = {
   eyebrow: "청주대 앵커사업단, 한국인터넷진흥원, 충청북도 공동 주최",
   desc: "충북 소재 대학생과 지역 거주자·재직자가 팀을 이뤄 실력을 겨루는 정보보호 해커톤",
   descLines: ["충북 소재 대학생과 지역 거주자·재직자가 팀을 이뤄 실력을 겨루는", "정보보호 해커톤"],
-  schedule: "2026.11.20(금) 16:30 – 11.21(토) 10:30 · 제이원호텔(오창)",
+  schedule: "2026.11.20(금) 16:30 – 11.21(토) 10:00 · 제이원호텔(오창)",
 };
 
 // 주최·주관·후원·운영 기관. logo는 public/logos/ 의 투명 배경 PNG 경로 — 파일이 없으면 기관명만 표시됩니다.
@@ -40,14 +40,14 @@ export const GOOGLE_FORM_URL = "https://forms.gle/FHGsvbCSgmB5DXE96";
 export const INQUIRY_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf8qc05_IUbofLqs08fH6x1ZPmf6UorJpwYxjsWrn2UCoSj4Q/viewform";
 
 // 대회 타임라인 양 끝 — 등록·오프닝으로 시작해 시상식으로 끝납니다.
-// 그 사이 전체 구간(19:00 ~ 익일 09:00, 규칙 안내 포함 14시간)은 경진 대회 구간입니다.
+// 그 사이 전체 구간(19:00 ~ 익일 08:30, 규칙 안내 포함 13시간 30분)은 경진 대회 구간입니다.
 export const MATCH_FLOW = {
   before: { title: "등록 & 오프닝" },
   after: { title: "시상식 & 마무리" },
 };
 
-// 경진 대회 경과 시간 — 타임라인 위 시간(h) 눈금으로 표시. 총 14시간.
-export const VULN_RELEASE_HOURS = [0, 4, 8, 12, 14];
+// 경진 대회 경과 시간 — 타임라인 위 시간(h) 눈금으로 표시. 총 13시간 30분.
+export const VULN_RELEASE_HOURS = [0, 4, 8, 12, 13.5];
 
 export const PURPOSES = [
   { title: "실전 검증", desc: "실전형 공격·방어 역량 검증 · 밤샘 공방전 · 팀 협업" },
@@ -88,7 +88,7 @@ export const PRIZES_GENERAL = [
 ];
 
 export const RESULTS_OVERVIEW = [
-  { label: "일시", value: "2026.11.20(금) 16:30 – 11.21(토) 10:30" },
+  { label: "일시", value: "2026.11.20(금) 16:30 – 11.21(토) 10:00" },
   { label: "장소", value: "제이원호텔(오창) 제이드홀 2층" },
 ];
 
@@ -96,9 +96,9 @@ export const SCHEDULE = [
   { date: "11.20(금)", time: "16:30 – 17:30", title: "등록", place: "제이드홀 2층", highlight: false },
   { date: "", time: "17:30 – 18:00", title: "오프닝", place: "제이드홀 2층", highlight: false },
   { date: "", time: "18:00 – 19:00", title: "석식", place: "제이원호텔", highlight: false },
-  { date: "", time: "19:00 – 09:00", title: "경진 대회 (14시간)", place: "제이드홀 2층", highlight: true },
-  { date: "11.21(토)", time: "09:00 – 10:00", title: "조식", place: "제이원호텔", highlight: false },
-  { date: "", time: "10:00 – 10:30", title: "시상식 및 마무리", place: "제이드홀 2층", highlight: false },
+  { date: "", time: "19:00 – 08:30", title: "경진 대회 (13시간 30분)", place: "제이드홀 2층", highlight: true },
+  { date: "11.21(토)", time: "08:30 – 09:30", title: "조식", place: "제이원호텔", highlight: false },
+  { date: "", time: "09:30 – 10:00", title: "시상식 및 마무리", place: "제이드홀 2층", highlight: false },
 ];
 
 export const AMENITIES = [

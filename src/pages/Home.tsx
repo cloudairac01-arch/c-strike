@@ -149,7 +149,7 @@ export default function Home() {
 
           <h3 className="reveal mb-2 text-[22.5px] font-bold text-text-primary">어떻게 진행되나요?</h3>
           <p className="reveal mb-6 text-[16.5px] text-text-secondary">
-            16:30 등록과 오프닝, 석식 후 19:00부터 다음 날 09:00까지 14시간 동안 경진 대회가 진행됩니다.
+            16:30 등록과 오프닝, 석식 후 19:00부터 다음 날 08:30까지 13시간 30분 동안 경진 대회가 진행됩니다.
           </p>
           <div className="mb-16">
             <MatchFlow />
