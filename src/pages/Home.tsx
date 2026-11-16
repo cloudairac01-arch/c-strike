@@ -99,11 +99,15 @@ export default function Home() {
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                     {g.items.map((o) => (
                       <span key={`${g.role}-${o.name}`} className="inline-flex items-center gap-2 text-[15.5px] font-semibold text-text-primary">
-                        {o.logo && <img src={o.logo} alt="" className={`${o.tall ? "h-[36px]" : "h-[24px]"} w-auto`} />}
-                        {o.logos?.map((l) => (
-                          <img key={l} src={l} alt="" className="h-[24px] w-auto" />
-                        ))}
-                        {o.name}
+                        {o.logo ? (
+                          <img src={o.logo} alt={o.name} className="h-[30px] w-auto max-w-[172px] object-contain" />
+                        ) : o.logos ? (
+                          o.logos.map((l) => (
+                            <img key={l} src={l} alt={o.name} className="h-[30px] w-auto max-w-[172px] object-contain" />
+                          ))
+                        ) : (
+                          o.name
+                        )}
                       </span>
                     ))}
                   </div>
