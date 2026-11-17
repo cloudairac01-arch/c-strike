@@ -93,7 +93,7 @@ export default function Rules() {
       <SubpageHero eyebrow="대회 규정" title={RULEBOOK.title} desc={RULEBOOK.intro} descClassName="max-w-none">
         <p className="mt-5 font-mono text-[14px] text-text-muted">
           시행 {RULEBOOK.effective} · 최종 수정 {RULEBOOK.updated} · 총 {RULEBOOK.chapters.length}장{" "}
-          {RULEBOOK.chapters.reduce((n, c) => n + c.articles.length, 0)}조
+          {RULEBOOK.chapters.reduce((n, c) => n + c.articles.filter((a) => Number.isInteger(a.no)).length, 0)}조
         </p>
       </SubpageHero>
 
@@ -137,7 +137,7 @@ export default function Rules() {
                     {c.articles.map((a) => (
                       <article key={a.no} id={`art${a.no}`} className="flex flex-col gap-3 py-7">
                         <h3 className="text-[19px] font-bold text-text-primary">
-                          제{a.no}조 ({a.title})
+                          {a.label ?? `제${a.no}조`} ({a.title})
                         </h3>
                         {a.body.map((b, i) => (
                           <Block key={i} block={b} />
